@@ -273,19 +273,19 @@ module CommandT
       end
 
       # "special" keys (overridable by settings)
-      { 'Backspace'             => '<BS>',
-        'Delete'                => '<Del>',
+      { 'Backspace'             => ['<BS>', '<C-h>'],
+        'Delete'                => ['<Del>', '<C-d>'],
         'AcceptSelection'       => '<CR>',
         'AcceptSelectionSplit'  => ['<C-CR>', '<C-s>'],
         'AcceptSelectionTab'    => '<C-t>',
         'AcceptSelectionVSplit' => '<C-v>',
         'ToggleFocus'           => '<Tab>',
-        'Cancel'                => ['<C-c>', '<Esc>'],
+        'Cancel'                => ['<C-c>', '<Esc>', '<F8>'],
         'SelectNext'            => ['<C-n>', '<C-j>', '<Down>'],
         'SelectPrev'            => ['<C-p>', '<C-k>', '<Up>'],
         'Clear'                 => '<C-u>',
-        'CursorLeft'            => ['<Left>', '<C-h>'],
-        'CursorRight'           => ['<Right>', '<C-l>'],
+        'CursorLeft'            => ['<Left>', '<C-f>'],
+        'CursorRight'           => ['<Right>', '<C-b>'],
         'CursorEnd'             => '<C-e>',
         'CursorStart'           => '<C-a>' }.each do |key, value|
         if override = get_list_or_string("g:CommandT#{key}Map")
